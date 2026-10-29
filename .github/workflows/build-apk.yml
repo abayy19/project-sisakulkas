@@ -1,0 +1,26 @@
+# Membangun APK dari aplikasi Flutter. Syarat: folder app_flutter/android sudah ada di repository
+# (hasil `flutter create` dan pengaturan minSdk 24, lihat app_flutter/README.md).
+name: Build APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app_flutter
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: dart tool/selfcheck.dart
+      - run: flutter build apk --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SisaKulkas-APK
+          path: app_flutter/build/app/outputs/flutter-apk/app-release.apk

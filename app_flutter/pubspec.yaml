@@ -1,0 +1,26 @@
+name: sisakulkas
+description: SisaKulkas - deteksi bahan makanan dengan YOLOv8 dan rekomendasi resep masakan Indonesia.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  onnxruntime_plus: ^1.5.0
+  image_picker: ^1.1.2
+  image: ^4.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/models/best.onnx
+    - assets/data/recipes.json
+    - assets/data/config.json

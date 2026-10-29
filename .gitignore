@@ -1,0 +1,31 @@
+# Umum
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Python / server
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.env
+*.db
+instance/
+
+# Flutter / Android
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+local.properties
+*.iml
+*.apk
+*.aab
+key.properties
+*.jks
+
+# Rahasia
+*.key
+secrets.*
